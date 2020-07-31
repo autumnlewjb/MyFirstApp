@@ -15,7 +15,7 @@ void main() {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
-              kmpp_logo,
+              kmppLogo,
               buttons,
             ],
           ),
@@ -25,7 +25,7 @@ void main() {
   );
 }
 
-final kmpp_logo = new Expanded(
+final kmppLogo = new Expanded(
   child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.stretch,
