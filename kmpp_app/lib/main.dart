@@ -43,41 +43,54 @@ final buttons = new Column(
   children: <Widget>[
     InkWell(
       onTap: _launchMIS,
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            ListTile(
-              title: Text('KMPP MIS'),
-              subtitle: Text('Website by KMPP to record your outings. '),
-            )
-          ],
+      child: Container(
+        height: 150,
+        child: Card(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              ListTile(
+                title: Text('KMPP MIS'),
+                subtitle: Text('Website by KMPP to record your outings. '),
+              )
+            ],
+          ),
         ),
       ),
     ),
     InkWell(
       onTap: _launchPortal,
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            ListTile(
-              title: Text('KMPP Portal'),
-              subtitle: Text('KMPP Student Portal to download lecture notes.'),
-            )
-          ],
+      child: Container(
+        height: 150,
+        child: Card(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              ListTile(
+                title: Text('KMPP Portal'),
+                subtitle:
+                    Text('KMPP Student Portal to download lecture notes.'),
+              )
+            ],
+          ),
         ),
       ),
     ),
     InkWell(
       onTap: _launchEsasi,
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            ListTile(
-              title: Text('KMPP Esasi'),
-              subtitle:
-                  Text('Website to record your co-curricular participation. '),
-            )
-          ],
+      child: Container(
+        height: 150,
+        child: Card(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              ListTile(
+                title: Text('KMPP Esasi'),
+                subtitle: Text(
+                    'Website to record your co-curricular participation. '),
+              )
+            ],
+          ),
         ),
       ),
     ),
