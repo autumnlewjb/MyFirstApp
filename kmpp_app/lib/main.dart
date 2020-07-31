@@ -15,64 +15,8 @@ void main() {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: <Widget>[
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Image(
-                      image: AssetImage('images/kmpp.jpg'),
-                    ),
-                  ],
-                ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  RaisedButton(
-                    child: Text(
-                      "MIS",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    color: Colors.deepPurple[900],
-                    animationDuration: Duration(seconds: 3),
-                    elevation: 10.0,
-                    autofocus: false,
-                    clipBehavior: Clip.none,
-                    onPressed: _launchMIS,
-                  ),
-                  RaisedButton(
-                    child: Text(
-                      "Portal",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    color: Colors.deepPurple[900],
-                    autofocus: false,
-                    elevation: 7.0,
-                    highlightElevation: 3.0,
-                    clipBehavior: Clip.none,
-                    onPressed: _launchPortal,
-                  ),
-                  RaisedButton(
-                    child: Text(
-                      "ESASI",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    color: Colors.deepPurple[900],
-                    autofocus: false,
-                    elevation: 4.0,
-                    clipBehavior: Clip.none,
-                    onPressed: _launchEsasi,
-                  ),
-                ],
-              )
+              kmpp_logo,
+              buttons,
             ],
           ),
         ),
@@ -80,6 +24,66 @@ void main() {
     ),
   );
 }
+
+final kmpp_logo = new Expanded(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: <Widget>[
+      Image(
+        image: AssetImage('images/kmpp.jpg'),
+      ),
+    ],
+  ),
+);
+
+final buttons = new Column(
+  mainAxisAlignment: MainAxisAlignment.end,
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+  children: <Widget>[
+    RaisedButton(
+      child: Text(
+        "MIS",
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      color: Colors.deepPurple[900],
+      animationDuration: Duration(seconds: 3),
+      elevation: 10.0,
+      autofocus: false,
+      clipBehavior: Clip.none,
+      onPressed: _launchMIS,
+    ),
+    RaisedButton(
+      child: Text(
+        "Portal",
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      color: Colors.deepPurple[900],
+      autofocus: false,
+      elevation: 7.0,
+      highlightElevation: 3.0,
+      clipBehavior: Clip.none,
+      onPressed: _launchPortal,
+    ),
+    RaisedButton(
+      child: Text(
+        "ESASI",
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      color: Colors.deepPurple[900],
+      autofocus: false,
+      elevation: 4.0,
+      clipBehavior: Clip.none,
+      onPressed: _launchEsasi,
+    ),
+  ],
+);
 
 _launchMIS() async {
   const url = 'http://mis.kmpp.matrik.edu.my/misv3/';
