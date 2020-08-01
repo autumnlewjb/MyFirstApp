@@ -48,6 +48,7 @@ final kmppLogo = new Expanded(
   ),
 );
 
+//TODO: cards not splashing.
 final buttons = new Column(
   mainAxisAlignment: MainAxisAlignment.end,
   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -93,6 +94,10 @@ final buttons = new Column(
               ),
             ],
           ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          clipBehavior: Clip.antiAlias,
         ),
       ),
     ),
@@ -137,6 +142,10 @@ final buttons = new Column(
               ),
             ],
           ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          clipBehavior: Clip.antiAlias,
         ),
       ),
     ),
@@ -183,6 +192,10 @@ final buttons = new Column(
               ),
             ],
           ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          clipBehavior: Clip.antiAlias,
         ),
       ),
     ),
