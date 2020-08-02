@@ -19,7 +19,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
     return new MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepPurpleAccent[900],
+          backgroundColor: Colors.deepPurpleAccent[100],
           leading: BackButton(
             onPressed: () => backButtonManager(context),
           ),
