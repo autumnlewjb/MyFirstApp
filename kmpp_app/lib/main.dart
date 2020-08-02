@@ -22,7 +22,7 @@ class HomeScreenContent extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('KMPP App'),
-        backgroundColor: Colors.deepPurpleAccent[700],
+        backgroundColor: Colors.deepPurpleAccent[400],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
