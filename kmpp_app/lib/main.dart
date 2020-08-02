@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // The main function is the starting point for all our Flutter apps
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.deepPurple[100],
-        appBar: AppBar(
-          title: Text('KMPP App'),
-          backgroundColor: Colors.deepPurpleAccent[700],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              kmppLogo,
-              buttons,
-            ],
-          ),
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(new HomeScreenApp());
+}
+
+class HomeScreenApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(home: new HomeScreenContent());
+  }
+}
+
+class HomeScreenContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text('KMPP App'),
+        backgroundColor: Colors.deepPurpleAccent[700],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: <Widget>[
+            buttons,
+          ],
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 final kmppLogo = new Expanded(
@@ -37,50 +48,189 @@ final kmppLogo = new Expanded(
   ),
 );
 
+//TODO: cards not splashing.
 final buttons = new Column(
   mainAxisAlignment: MainAxisAlignment.end,
   crossAxisAlignment: CrossAxisAlignment.stretch,
   children: <Widget>[
-    RaisedButton(
-      child: Text(
-        "MIS",
-        style: TextStyle(
-          color: Colors.white,
+    Stack(
+      children: <Widget>[
+        Container(
+          height: 170,
+          child: Card(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/welcome.jpg'),
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.5),
+                        BlendMode.luminosity,
+                      ),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        'KMPP MIS',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Website by KMPP to record your outings.',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            clipBehavior: Clip.antiAlias,
+          ),
         ),
-      ),
-      color: Colors.deepPurple[900],
-      animationDuration: Duration(seconds: 3),
-      elevation: 10.0,
-      autofocus: false,
-      clipBehavior: Clip.none,
-      onPressed: _launchMIS,
+        Container(
+          height: 170,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: _launchMIS,
+              splashColor: Colors.white,
+            ),
+          ),
+        ),
+      ],
     ),
-    RaisedButton(
-      child: Text(
-        "Portal",
-        style: TextStyle(
-          color: Colors.white,
+    Stack(
+      children: <Widget>[
+        Container(
+          height: 170,
+          child: Card(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/library.jpg'),
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.5),
+                        BlendMode.luminosity,
+                      ),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        'KMPP Portal',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'KMPP Student Portal to download lecture notes.',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            clipBehavior: Clip.antiAlias,
+          ),
         ),
-      ),
-      color: Colors.deepPurple[900],
-      autofocus: false,
-      elevation: 7.0,
-      highlightElevation: 3.0,
-      clipBehavior: Clip.none,
-      onPressed: _launchPortal,
+        Container(
+          height: 170,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: _launchPortal,
+              splashColor: Colors.white,
+            ),
+          ),
+        ),
+      ],
     ),
-    RaisedButton(
-      child: Text(
-        "ESASI",
-        style: TextStyle(
-          color: Colors.white,
+    Stack(
+      children: <Widget>[
+        Container(
+          height: 170,
+          child: Card(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'images/sport.jpg',
+                      ),
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.5),
+                        BlendMode.luminosity,
+                      ),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        'KMPP Esasi',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'Website to record your co-curricular participation. ',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Container(
+                  height: 170,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: _launchEsasi,
+                      splashColor: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            clipBehavior: Clip.antiAlias,
+          ),
         ),
-      ),
-      color: Colors.deepPurple[900],
-      autofocus: false,
-      elevation: 4.0,
-      clipBehavior: Clip.none,
-      onPressed: _launchEsasi,
+      ],
     ),
   ],
 );
