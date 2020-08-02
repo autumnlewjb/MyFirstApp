@@ -22,7 +22,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
           leading: BackButton(
             onPressed: () => backButtonManager(context),
           ),
-          title: Text('Web View Route'),
+          title: Text('Website'),
         ),
         body: Column(
           children: <Widget>[
