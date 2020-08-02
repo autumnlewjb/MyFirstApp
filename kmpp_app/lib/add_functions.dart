@@ -5,3 +5,7 @@ void launchURL(BuildContext context, String url) {
   Navigator.push(
       context, MaterialPageRoute(builder: (context) => WebViewContainer(url)));
 }
+
+void backButtonManager(BuildContext context) {
+  Navigator.pop(context);
+}

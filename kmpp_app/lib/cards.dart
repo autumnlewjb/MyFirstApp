@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:kmpp_app/launch_url.dart';
+import 'package:kmpp_app/add_functions.dart';
 
 // TODO: The inkwell is not splashing again
 class CardManager extends StatelessWidget {

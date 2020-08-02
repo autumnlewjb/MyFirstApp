@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kmpp_app/add_functions.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewContainer extends StatefulWidget {
@@ -18,6 +19,9 @@ class _WebViewContainerState extends State<WebViewContainer> {
     return new MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: BackButton(
+            onPressed: () => backButtonManager(context),
+          ),
           title: Text('Web View Route'),
         ),
         body: Column(
