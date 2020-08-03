@@ -15,6 +15,7 @@ _launchURLWithBrowser(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
   } else {
-    await launch('https://google.com/search?q=$url');
+    var search = url.split('/').join('+');
+    await launch('https://google.com/search?q=$search');
   }
 }
