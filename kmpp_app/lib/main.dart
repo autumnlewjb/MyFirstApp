@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kmpp_app/cards.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // The main function is the starting point for all our Flutter apps
 void main() {
@@ -31,6 +32,10 @@ class HomeScreenContent extends StatelessWidget {
             new CardManager(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: SvgPicture.asset('icons/scanner.svg'),
       ),
     );
   }
