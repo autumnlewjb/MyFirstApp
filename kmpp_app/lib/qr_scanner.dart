@@ -7,8 +7,8 @@ void scannerFunction(BuildContext context) async {
   var result = await BarcodeScanner.scan();
 
   print(result.rawContent);
-  launchURL(context, result.rawContent);
-  // _launchURLWithBrowser(result.rawContent);
+  // launchURL(context, result.rawContent);
+  _launchURLWithBrowser(result.rawContent);
 }
 
 _launchURLWithBrowser(String url) async {
