@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kmpp_app/cards.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kmpp_app/qr_scanner.dart';
 
 // The main function is the starting point for all our Flutter apps
 void main() {
@@ -34,7 +35,7 @@ class HomeScreenContent extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => scannerFunction(context),
         child: SvgPicture.asset('icons/scanner.svg'),
       ),
     );

@@ -30,7 +30,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
             Expanded(
               child: WebView(
                 initialUrl: this.url,
-                javascriptMode: JavascriptMode.disabled,
+                javascriptMode: JavascriptMode.unrestricted,
               ),
             )
           ],
