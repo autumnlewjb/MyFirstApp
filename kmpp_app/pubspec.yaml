@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   url_launcher: ^5.5.0
   webview_flutter: ^0.3.22+1
+  flutter_svg: ^0.17.4
+  barcode_scan: ^3.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -52,6 +54,7 @@ flutter:
     - images/library.jpg
     - images/sport.jpg
     - images/welcome.jpg
+    - icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
