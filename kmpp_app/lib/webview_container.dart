@@ -25,15 +25,17 @@ class _WebViewContainerState extends State<WebViewContainer> {
           ),
           title: Text('Website'),
         ),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: WebView(
-                initialUrl: this.url,
-                javascriptMode: JavascriptMode.unrestricted,
-              ),
-            )
-          ],
+        body: SafeArea(
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: WebView(
+                  initialUrl: this.url,
+                  javascriptMode: JavascriptMode.unrestricted,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
