@@ -19,11 +19,12 @@ class _WebViewContainerState extends State<WebViewContainer> {
     return new MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepPurpleAccent[100],
+          backgroundColor: Colors.yellow[300],
           leading: BackButton(
+            color: Colors.black,
             onPressed: () => backButtonManager(context),
           ),
-          title: Text('Website'),
+          title: Text('Website', style: TextStyle(color: Colors.black)),
         ),
         body: SafeArea(
           child: Column(

@@ -23,22 +23,22 @@ class HomeScreenContent extends StatelessWidget {
     return new Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('KMPP App'),
-        backgroundColor: Colors.deepPurpleAccent[400],
+        title: Text('KMPP for Students'),
+        backgroundColor: Colors.blueAccent[700],
       ),
       body: SafeArea(
-        child: Padding(
+        child: ListView(
           padding: const EdgeInsets.all(8.0),
-          child: ListView(
-            children: <Widget>[
-              new CardManager(),
-            ],
-          ),
+          children: <Widget>[
+            new CardManager(),
+          ],
         ),
       ),
       floatingActionButton: Builder(
         builder: (BuildContext context) {
           return new FloatingActionButton(
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.yellow,
               onPressed: () => _activateScanner(context),
               child: SvgPicture.asset('icons/scanner.svg'));
         },
