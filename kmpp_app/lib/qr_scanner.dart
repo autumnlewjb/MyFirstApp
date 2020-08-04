@@ -14,8 +14,5 @@ void scannerFunction(BuildContext context) async {
 _launchURLWithBrowser(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
-  } else {
-    var search = url.split('/').join('+');
-    await launch('https://google.com/search?q=$search');
   }
 }
