@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:kmpp_app/launch_url.dart';
+import 'package:kmpp_app/add_functions.dart';
 
+// TODO: The inkwell is not splashing again
 class CardManager extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,8 @@ class CardManager extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: UrlManager.launchMIS,
+              onTap: () =>
+                  launchURL(context, 'http://mis.kmpp.matrik.edu.my/misv3/'),
               splashColor: Colors.white,
             ),
           ),
@@ -131,7 +133,8 @@ class CardManager extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: UrlManager.launchPortal,
+              onTap: () => launchURL(
+                  context, 'http://portal.kmpp.matrik.edu.my/login/index.php'),
               splashColor: Colors.white,
             ),
           ),
@@ -187,7 +190,8 @@ class CardManager extends StatelessWidget {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      onTap: UrlManager.launchEsasi,
+                      onTap: () => launchURL(context,
+                          'http://esasi.kmpp.matrik.edu.my/loginPelajar.php'),
                       splashColor: Colors.white,
                     ),
                   ),
