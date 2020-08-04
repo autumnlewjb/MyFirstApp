@@ -36,10 +36,27 @@ class HomeScreenContent extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => scannerFunction(context),
-        child: SvgPicture.asset('icons/scanner.svg'),
+      floatingActionButton: Builder(
+        builder: (BuildContext context) {
+          return new FloatingActionButton(
+              onPressed: () => _activateScanner(context),
+              child: SvgPicture.asset('icons/scanner.svg'));
+        },
       ),
     );
+  }
+}
+
+_activateScanner(BuildContext context) async {
+  bool success = await scannerFunction(context);
+  if (!success) {
+    final snackbar = new SnackBar(
+      content: Text('Unable to launch the website. '),
+      action: SnackBarAction(
+        label: 'TRY AGAIN',
+        onPressed: () => _activateScanner(context),
+      ),
+    );
+    Scaffold.of(context).showSnackBar(snackbar);
   }
 }
