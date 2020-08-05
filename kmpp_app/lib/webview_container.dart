@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kmpp_app/add_functions.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+//TODO: Webview have problem accessing link with _blank
+//TODO: back button in webview quit the whole webview and not the webpage
 class WebViewContainer extends StatefulWidget {
   final String url;
   WebViewContainer(this.url);
@@ -41,4 +42,8 @@ class _WebViewContainerState extends State<WebViewContainer> {
       ),
     );
   }
+}
+
+void backButtonManager(BuildContext context) {
+  Navigator.pop(context);
 }

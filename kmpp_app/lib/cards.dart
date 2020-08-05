@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:kmpp_app/add_functions.dart';
+import 'package:kmpp_app/webview_container.dart';
 
 // TODO: The inkwell is not splashing again
 class CardManager extends StatelessWidget {
@@ -207,4 +207,9 @@ class CardManager extends StatelessWidget {
       ],
     );
   }
+}
+
+void launchURL(BuildContext context, String url) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => WebViewContainer(url)));
 }

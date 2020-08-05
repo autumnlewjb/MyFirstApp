@@ -13,35 +13,38 @@ void main() {
 class HomeScreenApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(home: new HomeScreenContent());
+    return new MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text('KMPP for Students'),
+          backgroundColor: Colors.blueAccent[700],
+        ),
+        body: new HomeScreenContent(),
+        floatingActionButton: Builder(
+          builder: (BuildContext context) {
+            return new FloatingActionButton(
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.yellow,
+              onPressed: () => _activateScanner(context),
+              child: SvgPicture.asset('icons/scanner.svg'),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 
 class HomeScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('KMPP for Students'),
-        backgroundColor: Colors.blueAccent[700],
-      ),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(8.0),
-          children: <Widget>[
-            new CardManager(),
-          ],
-        ),
-      ),
-      floatingActionButton: Builder(
-        builder: (BuildContext context) {
-          return new FloatingActionButton(
-              foregroundColor: Colors.black,
-              backgroundColor: Colors.yellow,
-              onPressed: () => _activateScanner(context),
-              child: SvgPicture.asset('icons/scanner.svg'));
-        },
+    return new SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(8.0),
+        children: <Widget>[
+          new CardManager(),
+        ],
       ),
     );
   }
