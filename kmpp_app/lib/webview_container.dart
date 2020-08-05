@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:kmpp_app/qr_scanner.dart';
 
 //TODO: Webview have problem accessing link with _blank
 //TODO: back button in webview quit the whole webview and not the webpage
@@ -34,6 +35,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
                 child: WebView(
                   initialUrl: this.url,
                   javascriptMode: JavascriptMode.unrestricted,
+                  onWebResourceError: (error) => launchURLWithBrowser(this.url),
                 ),
               )
             ],
