@@ -24,7 +24,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
           backgroundColor: Colors.yellow[300],
           leading: BackButton(
             color: Colors.black,
-            onPressed: () => backButtonManager(context),
+            onPressed: () => _backButtonManager(context),
           ),
           title: Text('Website', style: TextStyle(color: Colors.black)),
         ),
@@ -46,6 +46,6 @@ class _WebViewContainerState extends State<WebViewContainer> {
   }
 }
 
-void backButtonManager(BuildContext context) {
+void _backButtonManager(BuildContext context) {
   Navigator.pop(context);
 }
