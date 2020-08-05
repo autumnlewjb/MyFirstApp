@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:kmpp_app/webview_container.dart';
+import 'package:kmpp_app/qr_scanner.dart';
 
 // TODO: The inkwell is not splashing again
 class CardManager extends StatelessWidget {
@@ -71,7 +71,7 @@ class CardManager extends StatelessWidget {
             color: Colors.transparent,
             child: InkWell(
               onTap: () =>
-                  launchURL(context, 'http://mis.kmpp.matrik.edu.my/misv3/'),
+                  launchURLWithBrowser('http://mis.kmpp.matrik.edu.my/misv3/'),
               splashColor: Colors.white,
             ),
           ),
@@ -133,8 +133,8 @@ class CardManager extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: () => launchURL(
-                  context, 'http://portal.kmpp.matrik.edu.my/login/index.php'),
+              onTap: () => launchURLWithBrowser(
+                  'http://portal.kmpp.matrik.edu.my/login/index.php'),
               splashColor: Colors.white,
             ),
           ),
@@ -190,7 +190,7 @@ class CardManager extends StatelessWidget {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      onTap: () => launchURL(context,
+                      onTap: () => launchURLWithBrowser(
                           'http://esasi.kmpp.matrik.edu.my/loginPelajar.php'),
                       splashColor: Colors.white,
                     ),
@@ -207,9 +207,4 @@ class CardManager extends StatelessWidget {
       ],
     );
   }
-}
-
-void launchURL(BuildContext context, String url) {
-  Navigator.push(
-      context, MaterialPageRoute(builder: (context) => WebViewContainer(url)));
 }
