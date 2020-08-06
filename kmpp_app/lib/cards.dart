@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kmpp_app/qr_scanner.dart';
 
-// TODO: The inkwell is not splashing again
 class CardManager extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
