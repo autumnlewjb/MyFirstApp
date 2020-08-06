@@ -168,6 +168,7 @@ class CardManager extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     const ListTile(
+                      isThreeLine: true,
                       title: Text(
                         'KMPP Esasi',
                         style: TextStyle(
